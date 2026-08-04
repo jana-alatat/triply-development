@@ -1690,3 +1690,52 @@ footer{
 
 }
 
+@media (max-width: 768px){
+
+    .team-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .team-card{
+
+        display:flex;
+        align-items:center;
+        text-align:left;
+
+        padding:20px;
+        min-height:120px;
+    }
+
+    .team-card img{
+
+        width:70px;
+        height:70px;
+
+        margin:0 20px 0 0;
+
+        flex-shrink:0;
+    }
+
+    .team-card h3{
+
+        margin:0;
+        font-size:1.4rem;
+    }
+
+    .team-card span{
+
+        margin-top:6px;
+        font-size:.95rem;
+    }
+
+    .team-card::before{
+
+        width:140px;
+        height:140px;
+
+        top:-70px;
+        left:-70px;
+    }
+
+}
