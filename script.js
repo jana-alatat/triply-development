@@ -27,38 +27,6 @@ window.addEventListener("load", () => {
   }, 1800);
 });
 
-// ============================================
-// PART 2: In-App Browser Warning Banner
-// (Instagram / Facebook) — extra safety net
-// ============================================
-(function checkInAppBrowser() {
-  const ua = navigator.userAgent || "";
-  const isInApp = /Instagram|FBAN|FBAV|Line\//i.test(ua);
-
-  if (isInApp) {
-    const banner = document.createElement("div");
-    banner.style.cssText = `
-      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
-      background: #000; color: #fff; padding: 14px 16px;
-      font-size: 14px; text-align: center; direction: rtl;
-    `;
-    banner.innerHTML = `
-      لتقدر تبعتلنا الفورم بأفضل شكل، افتح الصفحة بمتصفح خارجي 👉
-      اضغط ⋮ فوق يمين وإختار <strong>"Open in Browser"</strong>
-      <br>
-      <button id="copyLinkBtn" style="margin-top:8px;padding:6px 14px;border:none;border-radius:6px;background:#fff;color:#000;font-weight:bold;">
-        نسخ رابط الصفحة
-      </button>
-    `;
-    document.body.prepend(banner);
-
-    document.getElementById("copyLinkBtn").addEventListener("click", () => {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        document.getElementById("copyLinkBtn").textContent = "تم النسخ ✓";
-      });
-    });
-  }
-})();
 
 // ============================================
 // PART 3: Contact Form Logic
