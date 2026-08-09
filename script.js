@@ -37,11 +37,9 @@ window.addEventListener("load", () => {
     },1800);
 
 });
-
 const contactForm = document.getElementById("contactForm");
 
 contactForm.addEventListener("submit", (e) => {
-
     e.preventDefault();
 
     const name = contactForm.name.value.trim();
@@ -55,9 +53,8 @@ contactForm.addEventListener("submit", (e) => {
         return;
     }
 
-    const email = "triplydevelopment@gmail.com";
-
-    const subject = "New Project Request - TRPLY";
+    // WhatsApp number
+    const whatsappNumber = "96171270966";
 
     const body = `Hello TRIPLY,
 
@@ -70,10 +67,11 @@ Phone: +961 ${phone}
 Project Details:
 ${message}`;
 
-    const mailtoURL =
-    `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const whatsappURL =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoURL;
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
 
     // Clear form
     contactForm.reset();
@@ -85,7 +83,6 @@ ${message}`;
         formMessage.textContent = "Thank you! We'll respond soon.";
         formMessage.classList.add("show");
     }
-
 });
 
 const heroTitle = document.getElementById("hero-title");
