@@ -1786,3 +1786,16 @@ footer{
 
 }
 
+#formMessage {
+    margin-top: 20px;
+    text-align: center;
+    color: #60A5FA;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: .3s ease;
+}
+
+#formMessage.show {
+    opacity: 1;
+    transform: translateY(0);
+}

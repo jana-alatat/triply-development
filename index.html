@@ -455,10 +455,15 @@
             >
 
 
-            <input 
-                type="tel" 
+            <input
+                type="tel"
+                id="phone"
                 name="phone"
-                placeholder="Phone Number"
+                maxlength="8"
+                minlength="8"
+                inputmode="numeric"
+                pattern="[0-9]{8}"
+                placeholder="XXXXXXXX"
                 required
             >
 
@@ -482,6 +487,7 @@
 
 
         </form>
+        <p id="formMessage"></p>
 
     </div>
 
