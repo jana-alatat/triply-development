@@ -70,11 +70,10 @@ Phone: +961 ${phone}
 Project Details:
 ${message}`;
 
-    const gmailURL =
-        `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoURL =
+    `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Open Gmail
-    window.open(gmailURL, "_blank");
+    window.location.href = mailtoURL;
 
     // Clear form
     contactForm.reset();
